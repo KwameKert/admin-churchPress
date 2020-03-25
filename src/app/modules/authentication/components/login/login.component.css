@@ -1,0 +1,35 @@
+/* body{
+    display: flex;
+}
+
+.background{
+     background-image: url("../../../../../assets/images/loginPage.jpg");
+    
+} */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding:0;
+}
+
+.input-lg {
+    width: 300px;
+}
+
+
+.forgotten-password {
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 55px;
+        bottom: 0;
+        position: absolute;
+    
+}
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: black !important;
+  } 
+  
+ 
