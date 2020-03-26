@@ -9,27 +9,27 @@
         
             <mat-card-content>
               
-                <form >
-                   <div class="form-group">
-                       <div class="form-label">Email</div>
-                       <input type="text" placeholder="Enter email here" class="form-control input-lg" autocomplete="off" >
-                   </div>
+                <form class="text-center">
 
-                   <div class="form-group">
-                    <div class="form-label">Password</div>
-                    <input type="password" placeholder="Enter password here" class="form-control input-lg"  autocomplete="off">
-                </div>
-                    <div class="">
-                        <button class="btn btn-primary" (click)="loginUser()"><span class="px-3">Login</span></button>
-                        <a href="" class="text-bold forgotten-password text-secondary">Forgotten password? </a>
-                    </div>
+                    <mat-form-field appearance="outline" style="width:300px"  >
+                        <mat-label>Username</mat-label>
+                        <input matInput placeholder="kwamekert"  formControlName="userName" >
+                        <mat-error *ngIf="loginForm.get('userName').invalid"> Invalid input </mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline" style="width:300px"  >
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="kwamekert"  formControlName="password" type="password" >
+                        <mat-error *ngIf="loginForm.get('password').invalid"> Invalid input </mat-error>
+                      </mat-form-field>
+                  <div align="center">
+                    <button class="btn btn-primary btn-block btn-sm" (click)="loginUser()" style="width:230px">Login</button>
+                  </div>
+                     
                   </form>
               
             </mat-card-content>
-            <mat-card-actions>
-              <button mat-button>LIKE</button>
-              <button mat-button>SHARE</button>
-            </mat-card-actions>
+          
           </mat-card>
     </div>
 

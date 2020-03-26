@@ -1,38 +1,29 @@
-/* body{
-    display: flex;
+  ::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
 }
 
-.background{
-     background-image: url("../../../../../assets/images/loginPage.jpg");
-    
-} */
+.mat-input-wrapper{
+    width:300px !important;
+  }  
 
-// 
-  
+
 .login-background{
     min-height:100%;
   background:linear-gradient(0deg, rgba(69,84,98, 0.3), rgba(69,84,98, 0.3)), url("/assets/images/cong.jpg");
   background-size: auto auto;
 }
 
-.input-lg {
-    width: 300px;
-}
 
-
-.forgotten-password {
-        text-decoration: none;
-        font-weight: 500;
-        margin-left: 55px;
-        bottom: 0;
-        position: absolute;
-    
-}
   
 .example-card {
     max-width: 400px;
   }
   
   
+
 
  
