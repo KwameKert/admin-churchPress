@@ -10,8 +10,11 @@ import { DefaultComponent } from './layouts/default/default.component';
 import {  MatDividerModule, MatToolbarModule, MatIconModule, MatButtonModule, 
   MatMenuModule, MatListModule } from '@angular/material';
   import { ToastrModule } from 'ngx-toastr';
+  import { HttpConfigInterceptor} from './interceptor/httpconfig.interceptor';
 import { MatSidenavModule,  MatCardModule, MatTableModule, MatPaginatorModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ToastrModule.forRoot({preventDuplicates: true}), 
     
   ],
-  providers: [],
+  providers: [ DatePipe, { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
