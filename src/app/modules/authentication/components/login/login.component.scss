@@ -7,10 +7,12 @@
     
 } */
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding:0;
+// 
+  
+.login-background{
+    min-height:100%;
+  background:linear-gradient(0deg, rgba(69,84,98, 0.3), rgba(69,84,98, 0.3)), url("/assets/images/cong.jpg");
+  background-size: auto auto;
 }
 
 .input-lg {
@@ -27,9 +29,10 @@ html, body {
     
 }
   
-   ::ng-deep.mat-form-field-underline {
-    /*change color of underline*/
-    background-color: black !important;
-  } 
+.example-card {
+    max-width: 400px;
+  }
   
+  
+
  
