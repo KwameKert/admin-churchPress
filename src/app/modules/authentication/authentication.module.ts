@@ -9,7 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import {SharedModule} from '../../shared/shared.module';
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatCardModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   exports: [
     MatFormFieldModule
