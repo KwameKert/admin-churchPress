@@ -9,7 +9,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { DefaultComponent } from './layouts/default/default.component';
 import {  MatDividerModule, MatToolbarModule, MatIconModule, MatButtonModule, 
   MatMenuModule, MatListModule } from '@angular/material';
-  
+  import { ToastrModule } from 'ngx-toastr';
 import { MatSidenavModule,  MatCardModule, MatTableModule, MatPaginatorModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -37,7 +37,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSidenavModule,  
     MatCardModule, 
     MatTableModule, 
-    MatPaginatorModule
+    MatPaginatorModule,
+    ToastrModule.forRoot({preventDuplicates: true}), 
     
   ],
   providers: [],
