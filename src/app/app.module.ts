@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent ,SidebarComponent,FooterComponent} from './layouts';
@@ -38,6 +38,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule, 
     MatTableModule, 
     MatPaginatorModule,
+    HttpClientModule,
     ToastrModule.forRoot({preventDuplicates: true}), 
     
   ],

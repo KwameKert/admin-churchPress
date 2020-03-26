@@ -20,6 +20,7 @@ export class AuthService {
   setUserDetails(authData: any){
     localStorage.setItem("userName", authData.userName);
     localStorage.setItem("role", authData.role);
+    localStorage.setItem("churchPressToken", authData.token);
     localStorage.setItem("status", "active" )
   }
 
@@ -30,6 +31,7 @@ export class AuthService {
       localStorage.removeItem("userName");
       localStorage.removeItem("role");
       localStorage.removeItem("status");
+      localStorage.removeItem("token");
       return true;
     }catch(err){
       throw err;
