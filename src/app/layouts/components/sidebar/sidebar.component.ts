@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  sermonLinks: boolean = false;
+  departmentLinks: boolean = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showSermonLinks(){
+    this.sermonLinks = !this.sermonLinks;
+  }
+
+  showDepartmentLinks(){
+    this.departmentLinks = !this.departmentLinks;
   }
 
 }

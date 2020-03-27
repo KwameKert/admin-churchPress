@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       }
       this._authService.setUserDetails(user);
 
-      this._toastr.success("Welcome to Skuulba 🙂","",{
+      this._toastr.success("Welcome to ChurchPress 🙂","",{
         timeOut:2000
       })
 
