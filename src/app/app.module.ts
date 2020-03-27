@@ -16,6 +16,9 @@ import { MatSidenavModule,  MatCardModule, MatTableModule, MatPaginatorModule} f
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { DatePipe } from '@angular/common';
+import { AddSermonComponent } from './modules/sermon/components/add-sermon/add-sermon.component';
+import { ListSermonsComponent } from './modules/sermon/components/list-sermons/list-sermons.component';
+import { UpdateSermonsComponent } from './modules/sermon/components/update-sermons/update-sermons.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { DatePipe } from '@angular/common';
     FooterComponent,
 
     DefaultComponent,
+
 
   ],
   imports: [

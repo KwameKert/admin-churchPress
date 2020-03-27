@@ -17,7 +17,12 @@ const routes: Routes= [
   loadChildren: () => import('./modules/student/student.module')
                      .then(m => m.StudentModule)
 },
-//{path: "**", redirectTo: "login"}
+{
+  path:'', 
+  component: DefaultComponent,
+  loadChildren: () => import('./modules/sermon/sermon.module')
+                     .then(m => m.SermonModule)
+},
 ];
 
 @NgModule({
