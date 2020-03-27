@@ -12,13 +12,13 @@ const routes: Routes= [
 },
 
 {
-  path:'', 
+  path:'settings', 
   component: DefaultComponent,
-  loadChildren: () => import('./modules/student/student.module')
-                     .then(m => m.StudentModule)
+  loadChildren: () => import('./modules/settings/settings.module')
+                     .then(m => m.SettingsModule)
 },
 {
-  path:'', 
+  path:'sermons', 
   component: DefaultComponent,
   loadChildren: () => import('./modules/sermon/sermon.module')
                      .then(m => m.SermonModule)

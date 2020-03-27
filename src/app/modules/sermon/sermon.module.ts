@@ -4,6 +4,7 @@ import { AddSermonComponent } from './components/add-sermon/add-sermon.component
 import { ListSermonsComponent } from './components/list-sermons/list-sermons.component';
 import { UpdateSermonsComponent } from './components/update-sermons/update-sermons.component';
 import { SermonRoutingModule } from './sermon-routing.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -15,7 +16,8 @@ import { SermonRoutingModule } from './sermon-routing.module';
   ],
   imports: [
     CommonModule,
-    SermonRoutingModule
+    SermonRoutingModule,
+    SharedModule
   ]
 })
 export class SermonModule { }
