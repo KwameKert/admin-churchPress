@@ -3,20 +3,57 @@
         <mat-card>
             <mat-card-content>
                 <div class="row">
-                    <div class="col-md-6 text-center"> <mat-icon  color="accent" >subscriptions</mat-icon></div>
-                    <div class="col-md-6"><app-counter [digit]="84" [duration]="1000"></app-counter></div>
+                    <div class="col-md-6 text-center mt-3"> <mat-icon  color="accent" >subscriptions</mat-icon></div>
+                    <div class="col-md-6">
+                        <app-counter [digit]="84" [duration]="1000"></app-counter>
+                        <p class="lead">Sermons</p>
+                    
+                    </div>
                 </div>
             </mat-card-content>
         </mat-card>
     </div>
-    <div class="col-md-4">
-        <div class="card">
-         
-        </div>
+    <div class="col-md-3">
+        <mat-card>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-md-6 text-center mt-3"> <mat-icon color="primary">today</mat-icon></div>
+                    <div class="col-md-6 text-center">
+                        <app-counter [digit]="14" [duration]="1000"></app-counter>
+                        <p class="lead">Events</p>
+                    
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
     </div>
-    <div class="col-md-4">
-        <div class="card">
-            <p class="lead">Hello</p>
-        </div>
+    <div class="col-md-3">
+        <mat-card>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-md-6 text-center mt-3"> <mat-icon color="warning">watch_later</mat-icon></div>
+                    <div class="col-md-6">
+                        <countdown [config]="{leftTime: 30}" (event)="handleEvent($event)"></countdown>
+                        <p class="lead">Next Event</p>
+                    
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-md-3">
+        <mat-card>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-md-6 text-center mt-3"> <mat-icon  color="accent" >subscriptions</mat-icon></div>
+                    <div class="col-md-6">
+                        <app-counter [digit]="84" [duration]="1000"></app-counter>
+                        <p class="lead">Sermons</p>
+                    
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
     </div>
 </div>

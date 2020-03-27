@@ -16,7 +16,7 @@ export class CounterComponent  implements AfterViewInit , OnChanges {
   @Input() duration: number;
   @Input() digit: number;
   @Input() steps: number;
-  @ViewChild("animatedDigit",{static: false}) animatedDigit: ElementRef;
+  @ViewChild("animatedDigit",{static: true}) animatedDigit: ElementRef;
   constructor() { }
 
   animateCount() {

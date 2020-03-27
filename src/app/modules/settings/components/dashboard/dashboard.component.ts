@@ -14,4 +14,10 @@ export class DashboardComponent implements OnInit {
 
   }
 
+
+  handleEvent(event: any){
+  if(event.left < 1){
+    console.log("Counter done")
+  }  
+  }
 }
