@@ -18,7 +18,7 @@ const routes: Routes= [
                      .then(m => m.SettingsModule)
 },
 {
-  path:'', 
+  path:'sermons', 
   component: DefaultComponent,
   loadChildren: () => import('./modules/sermon/sermon.module')
                      .then(m => m.SermonModule)

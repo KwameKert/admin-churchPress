@@ -13,8 +13,8 @@
 
             <a  mat-list-item  routerLinkActive="list-item-active" (click)="showSermonLinks()" data-toggle="collapse" href="#sermonLinks">	<mat-icon  class="sidebar-icon">subscriptions</mat-icon>Sermon <mat-icon class="li-icon" [style.display]="sermonLinks ? 'none':'block'"  >keyboard_arrow_right</mat-icon>  <mat-icon class="li-icon" [style.display]="sermonLinks ? 'block':'none'" >keyboard_arrow_down</mat-icon></a>
             <div class="collapse" id="sermonLinks">
-                <li><a  mat-list-item  routerLinkActive="list-item-active" routerLink="/student/addStudent"> <mat-icon>add</mat-icon>  Add Sermon</a></li>
-                <li><a  mat-list-item  routerLinkActive="list-item-active" routerLink="/student/searchStudent"> <mat-icon>add</mat-icon>  Search Sermon</a></li>
+                <li><a  mat-list-item  routerLinkActive="list-item-active" routerLink="/sermons/add"> <mat-icon>add</mat-icon>  Add Sermon</a></li>
+                <li><a  mat-list-item  routerLinkActive="list-item-active" routerLink="/sermons/list"> <mat-icon>add</mat-icon>  List Sermons</a></li>
               </div>
                
         <a  mat-list-item  routerLinkActive="list-item-active" routerLink="/" class="text-center"> Dashboard</a>

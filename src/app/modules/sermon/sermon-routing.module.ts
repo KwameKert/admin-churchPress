@@ -8,7 +8,7 @@ import { ListSermonsComponent } from './components/list-sermons/list-sermons.com
 
 const routes: Routes = [ 
 
-  {path: '/add', component: AddSermonComponent},
+  {path: 'add', component: AddSermonComponent},
   {path: '/list', component: ListSermonsComponent},
   {path: '/update', component: UpdateSermonsComponent},
   

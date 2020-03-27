@@ -3,8 +3,8 @@
         <mat-card>
             <mat-card-content>
                 <div class="row">
-                    <div class="col-md-6 text-center mt-3"> <mat-icon  color="accent" >subscriptions</mat-icon></div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 text-center mt-3"> <mat-icon  color="warn" >subscriptions</mat-icon></div>
+                    <div class="col-md-6 text-center">
                         <app-counter [digit]="84" [duration]="1000"></app-counter>
                         <p class="lead">Sermons</p>
                     
@@ -17,8 +17,8 @@
         <mat-card>
             <mat-card-content>
                 <div class="row">
-                    <div class="col-md-6 text-center mt-3"> <mat-icon color="primary">today</mat-icon></div>
-                    <div class="col-md-6 text-center">
+                    <div class="col-md-4 text-center mt-3"> <mat-icon color="primary">today</mat-icon></div>
+                    <div class="col-md-8 text-center">
                         <app-counter [digit]="14" [duration]="1000"></app-counter>
                         <p class="lead">Events</p>
                     
@@ -31,9 +31,9 @@
         <mat-card>
             <mat-card-content>
                 <div class="row">
-                    <div class="col-md-6 text-center mt-3"> <mat-icon color="warning">watch_later</mat-icon></div>
-                    <div class="col-md-6">
-                        <countdown [config]="{leftTime: 30}" (event)="handleEvent($event)"></countdown>
+                    <div class="col-md-4 text-center mt-3 mb-3"> <mat-icon color="accent">access_alarm</mat-icon></div>
+                    <div class="col-md-8 mt-2 text-center">
+                        <countdown #cd [config]="{leftTime : leftTime}" (event)="handleEvent($event)" style="font-size: 25px" class="countdown "></countdown>
                         <p class="lead">Next Event</p>
                     
                     </div>
@@ -45,14 +45,30 @@
     <div class="col-md-3">
         <mat-card>
             <mat-card-content>
-                <div class="row">
-                    <div class="col-md-6 text-center mt-3"> <mat-icon  color="accent" >subscriptions</mat-icon></div>
-                    <div class="col-md-6">
-                        <app-counter [digit]="84" [duration]="1000"></app-counter>
-                        <p class="lead">Sermons</p>
+                <div class="row" *ngIf="status; else elseBlock ">
+                    <div class="col-md-4 text-center mt-3"> <mat-icon style="color:green"> rss_feed</mat-icon></div>
+                    <div class="col-md-8 text-center mt-2">
+                        <span style="font-size: 23px; color:#797979;">Active</span>
+                        <p class="lead">Website</p>
                     
                     </div>
                 </div>
+
+                <ng-template #elseBlock>
+                    <div class="row" >
+                        <div class="col-md-4 text-center mt-3"> <mat-icon > portable_wifi_off</mat-icon></div>
+                        <div class="col-md-8 text-center mt-2">
+                            <span style="font-size: 23px; color:#797979;">Inactive</span>
+                            <p class="lead">Website</p>
+                        
+                        </div>
+                    </div>
+    
+                </ng-template>
+                
+
+
+
             </mat-card-content>
         </mat-card>
     </div>
