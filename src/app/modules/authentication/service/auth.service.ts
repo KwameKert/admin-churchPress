@@ -18,20 +18,20 @@ export class AuthService {
   }
 
   setUserDetails(authData: any){
-    localStorage.setItem("userName", authData.userName);
-    localStorage.setItem("role", authData.role);
+    localStorage.setItem("chruchPressUserName", authData.userName);
+    localStorage.setItem("churchPressRole", authData.role);
     localStorage.setItem("churchPressToken", authData.token);
-    localStorage.setItem("status", "active" )
+    localStorage.setItem("churchPressstatus", "active" )
   }
 
   logUserOut(){
 
     try{
 
-      localStorage.removeItem("userName");
-      localStorage.removeItem("role");
-      localStorage.removeItem("status");
-      localStorage.removeItem("token");
+      localStorage.removeItem("chruchPressUserName");
+      localStorage.removeItem("churchPressRole");
+      localStorage.removeItem("churchPressToken");
+      localStorage.removeItem("churchPressstatus");
       return true;
     }catch(err){
       throw err;

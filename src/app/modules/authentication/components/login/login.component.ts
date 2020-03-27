@@ -27,11 +27,12 @@ export class LoginComponent implements OnInit {
     this._authService.getUserDetails(this.loginForm.value).subscribe(data=>{
 
       this.response = data;
+      console.log(this.response);
 
       let user = {
-        token : this.response.data.jwt,
-        userName: this.response.data.user.userName,
-        role: this.response.data.user.role
+        token : this.response.jwt,
+        userName: this.response.user.userName,
+        role: this.response.user.role
       }
       this._authService.setUserDetails(user);
 
@@ -39,7 +40,7 @@ export class LoginComponent implements OnInit {
         timeOut:2000
       })
 
-      this.router.navigate(['/student/dashboard']);
+      this.router.navigate(['/dashboard']);
       
     }, error=>{
       this._toastr.info("Invalid credentials. 🥺","",{
