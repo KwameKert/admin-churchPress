@@ -9,6 +9,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { DefaultComponent } from './layouts/default/default.component';
 import {  MatDividerModule, MatToolbarModule, MatIconModule, MatButtonModule, 
   MatMenuModule, MatListModule } from '@angular/material';
+
   import { ToastrModule } from 'ngx-toastr';
   import { HttpConfigInterceptor} from './interceptor/httpconfig.interceptor';
 import { MatSidenavModule,  MatCardModule, MatTableModule, MatPaginatorModule} from '@angular/material';
@@ -23,6 +24,7 @@ import { DatePipe } from '@angular/common';
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
+
     DefaultComponent,
 
   ],
@@ -42,7 +44,7 @@ import { DatePipe } from '@angular/common';
     MatTableModule, 
     MatPaginatorModule,
     HttpClientModule,
-    ToastrModule.forRoot({preventDuplicates: true}), 
+    ToastrModule.forRoot(), 
     
   ],
   providers: [ DatePipe, { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true } ],

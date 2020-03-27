@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, FormBuilder} from '@angular/forms';
 import { Router } from '@angular/router';
 import {AuthService} from '../../service/auth.service';
-import { ThrowStmt } from '@angular/compiler';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -17,6 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private fb: FormBuilder, private _authService: AuthService, private _toastr: ToastrService) { }
 
   ngOnInit() {
+
+
     this.loginForm = this.fb.group({
       userName : new FormControl('', Validators.required),
       password : new FormControl('', Validators.required),
@@ -27,8 +28,6 @@ export class LoginComponent implements OnInit {
     this._authService.getUserDetails(this.loginForm.value).subscribe(data=>{
 
       this.response = data;
-      console.log(this.response);
-
       let user = {
         token : this.response.jwt,
         userName: this.response.user.userName,
