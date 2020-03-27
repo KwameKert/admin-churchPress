@@ -12,17 +12,17 @@ const routes: Routes= [
 },
 
 {
-  path:'settings', 
+  path:'', 
   component: DefaultComponent,
   loadChildren: () => import('./modules/settings/settings.module')
                      .then(m => m.SettingsModule)
 },
 {
-  path:'sermons', 
+  path:'', 
   component: DefaultComponent,
   loadChildren: () => import('./modules/sermon/sermon.module')
                      .then(m => m.SermonModule)
-},
+}
 ];
 
 @NgModule({
