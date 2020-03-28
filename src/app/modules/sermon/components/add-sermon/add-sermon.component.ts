@@ -22,4 +22,8 @@ export class AddSermonComponent implements OnInit {
     })
   }
 
+
+  saveSermon(){
+    console.log(this.SermonForm.value);
+  }
 }

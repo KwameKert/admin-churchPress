@@ -6,7 +6,7 @@
                <img src="assets/images/pst4.jpg" alt="" class="img-fluid">
             </div>
             <div class="col-md-7">
-                <form [formGroup]="SermonForm">
+                <form [formGroup]="SermonForm" (ngSubmit)="saveSermon()">
     
                     <mat-form-field appearance="outline" style="width:500px"  >
                         <mat-label>Title</mat-label>
@@ -50,7 +50,7 @@
                       </div>
 
                       <div class="float-right">
-                        <button  mat-stroked-button color="primary" class="mr-5" >Save Sermon</button>
+                        <button  mat-stroked-button color="primary" class="mr-5" type="submit" >Save Sermon</button>
                       </div>
                 </form>
             </div>
