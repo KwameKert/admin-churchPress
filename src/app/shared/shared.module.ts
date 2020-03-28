@@ -11,7 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
- 
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatCardModule, MatDividerModule, MatNativeDateModule,MatSelectModule} from '@angular/material';
@@ -39,6 +39,7 @@ import { MatCardModule, MatDividerModule, MatNativeDateModule,MatSelectModule} f
     MatSelectModule,
     MatIconModule,
     MatTabsModule,
+    MatSlideToggleModule,
     MatDialogModule,
   ],
   providers: [  
@@ -63,6 +64,7 @@ import { MatCardModule, MatDividerModule, MatNativeDateModule,MatSelectModule} f
     MatDividerModule,
     MatTabsModule,
     MatSelectModule,
+    MatSlideToggleModule,
     MatDialogModule,
   ]
 })

@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
 
-
+this.clearStorage();
     this.loginForm = this.fb.group({
       userName : new FormControl('', Validators.required),
       password : new FormControl('', Validators.required),
@@ -47,6 +47,10 @@ export class LoginComponent implements OnInit {
       })
 
     })
+  }
+
+  clearStorage(){
+    this._authService.logUserOut();
   }
 
 }
