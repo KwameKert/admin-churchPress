@@ -16,9 +16,9 @@ export class AddSermonComponent implements OnInit {
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       speaker: new FormControl('', Validators.required),
-      link: new FormControl('', Validators.required),
-      serviceType: new FormControl('', Validators.required),
-      isLive : new FormControl('')
+      url: new FormControl('', Validators.required),
+      category: new FormControl('', Validators.required),
+      stat : new FormControl('')
     })
   }
 

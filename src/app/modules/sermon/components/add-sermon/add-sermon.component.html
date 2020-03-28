@@ -23,7 +23,7 @@
 
                       <mat-form-field appearance="outline" style="width:500px" >
                         <mat-label>Service </mat-label>
-                        <mat-select formControlName="serviceType">
+                        <mat-select formControlName="category">
                             <mat-option value="male">Sunday</mat-option>
                             <mat-option value="female">6th Month Visitation</mat-option>
                             <mat-option value="female">Easter Convention</mat-option>
@@ -34,8 +34,8 @@
     
                       <mat-form-field appearance="outline" style="width:500px"  >
                         <mat-label>Link</mat-label>
-                        <input matInput placeholder="Holy Spirit"  formControlName="link" >
-                        <mat-error *ngIf="SermonForm.get('link').invalid"> Invalid input </mat-error>
+                        <input matInput placeholder="Holy Spirit"  formControlName="url" >
+                        <mat-error *ngIf="SermonForm.get('url').invalid"> Invalid input </mat-error>
                       </mat-form-field>  
 
                       
@@ -46,7 +46,7 @@
                       </mat-form-field>
 
                       <div class="form-group " >
-                        <mat-slide-toggle formControlName="isLive" style="margin-left: -430px;">Live</mat-slide-toggle>
+                        <mat-slide-toggle formControlName="stat" style="margin-left: -430px;">Live</mat-slide-toggle>
                       </div>
 
                       <div class="float-right">
