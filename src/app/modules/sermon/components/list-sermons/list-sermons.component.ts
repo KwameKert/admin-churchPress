@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import {SermonService} from '../../service/sermon.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-sermons',
@@ -9,12 +10,35 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class ListSermonsComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'title', 'speaker', 'uploaded'];
-  dataSource : any;;
-  constructor() { }
+  displayedColumns: string[] = ['id', 'title', 'speaker','category', 'uploaded', 'action'];
+  dataSource : any;
+  responseData: any;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+
+  constructor(private _sermonService: SermonService, private _toastr: ToastrService) { }
 
   ngOnInit() {
-    
+    this.listSermons();
   }
+
+  listSermons(){
+    this._sermonService.listSermon().subscribe(data=>{
+      this.responseData = data;
+      this.dataSource = new MatTableDataSource(this.responseData.data);
+      this.dataSource.paginator = this.paginator;
+    }, error=>{
+      this._toastr.error("Oops an error. 🥺","",{
+        timeOut:2000
+      })
+    })
+  }
+
+public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
+  }
+
+  // ngAfterViewInit(): void {
+  //   this.dataSource.paginator = this.paginator;
+  // }
 
 }
