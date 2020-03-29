@@ -4,6 +4,7 @@ import {SermonService} from '../../service/sermon.service';
 import { ToastrService } from 'ngx-toastr';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ViewSermonComponent } from '../view-sermon/view-sermon.component';
+import {DeleteItemComponent} from '../../../shared/delete-item/delete-item.component';
 
 
 
@@ -41,7 +42,7 @@ public doFilter = (value: string) => {
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 
-  openStudent(sermon): void {
+  openSermon(sermon): void {
     const dialogRef = this.dialog.open(ViewSermonComponent, {
       width: '850px',
       height: '380px',
@@ -53,5 +54,22 @@ public doFilter = (value: string) => {
       // this.animal = result;
     });
   }
+
+
+  deleteSermon(id: Number){
+    const dialogRef = this.dialog.open(DeleteItemComponent, {
+      width: '850px',
+      height: '380px',
+      data: id
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
+  }
+
+
+  
 
 }

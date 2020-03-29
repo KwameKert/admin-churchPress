@@ -25,7 +25,8 @@ import { DatePipe } from '@angular/common';
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    DefaultComponent
+    DefaultComponent,
+    
   ],
   imports: [
     BrowserModule,

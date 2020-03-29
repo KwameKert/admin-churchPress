@@ -16,10 +16,11 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatCardModule, MatDividerModule, MatNativeDateModule,MatSelectModule} from '@angular/material';
+import { DeleteItemComponent } from '../modules/shared/delete-item/delete-item.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [DeleteItemComponent],
   imports: [
     CommonModule,
     MatTableModule,
@@ -67,6 +68,8 @@ import { MatCardModule, MatDividerModule, MatNativeDateModule,MatSelectModule} f
     MatSelectModule,
     MatSlideToggleModule,
     MatDialogModule,
-  ]
+    DeleteItemComponent
+  ],
+  entryComponents: [DeleteItemComponent]
 })
 export class SharedModule { }
