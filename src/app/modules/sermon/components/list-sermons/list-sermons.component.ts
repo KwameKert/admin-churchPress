@@ -41,10 +41,11 @@ public doFilter = (value: string) => {
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 
-  openStudent(): void {
+  openStudent(sermon): void {
     const dialogRef = this.dialog.open(ViewSermonComponent, {
-      width: '250px',
-      data: {name: "hello"}
+      width: '850px',
+      height: '380px',
+      data: sermon
     });
 
     dialogRef.afterClosed().subscribe(result => {

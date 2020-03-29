@@ -1,1 +1,28 @@
-<p>view-sermon works!</p>
+<h1 mat-dialog-title>View Sermon</h1>
+<div mat-dialog-content>
+    <div  class="row">
+
+        <div class="col-md-5">
+            <iframe width="300" height="215" src="https://www.youtube.com/embed/WDxMas784iY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    
+    
+        <div class="col-md-6 ">
+            <p class="lead"><b>Title : </b>{{data.title}}</p>
+            <p  class="lead"><b>Speaker : </b>{{data.speaker }}</p>
+            <p  class="lead"><b>Service Type : </b>{{data.category}}  </p>
+            <p  class="lead"><b>Description : </b>{{data.description}}</p>
+            <p  class="lead"><b>Date Uploaded : </b>{{data.createdAt | date:'mediumDate'}} </p>
+        </div>
+    
+    
+    </div>
+    
+</div>
+<div mat-dialog-actions class="float-right">
+    <button mat-button (click)="close()" class="float-right">Close</button>
+    
+  </div>
+       
+
+

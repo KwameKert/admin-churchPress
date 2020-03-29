@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-view-sermon',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-sermon.component.scss']
 })
 export class ViewSermonComponent implements OnInit {
-
-  constructor() { }
+ 
+  constructor(
+    public dialogRef: MatDialogRef<ViewSermonComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+  }
+
+  close(): void {
+    this.dialogRef.close();
   }
 
 }
