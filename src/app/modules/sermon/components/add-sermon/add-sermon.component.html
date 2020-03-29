@@ -17,19 +17,19 @@
                       
                     <mat-form-field appearance="outline" style="width:500px"  >
                         <mat-label>Speaker</mat-label>
-                        <input matInput placeholder="Holy Spirit"  formControlName="title" >
-                        <mat-error *ngIf="SermonForm.get('title').invalid"> Invalid input </mat-error>
+                        <input matInput placeholder="Holy Spirit"  formControlName="speaker" >
+                        <mat-error *ngIf="SermonForm.get('speaker').invalid"> Invalid input </mat-error>
                       </mat-form-field>
 
                       <mat-form-field appearance="outline" style="width:500px" >
                         <mat-label>Service </mat-label>
                         <mat-select formControlName="category">
-                            <mat-option value="male">Sunday</mat-option>
-                            <mat-option value="female">6th Month Visitation</mat-option>
-                            <mat-option value="female">Easter Convention</mat-option>
-                            <mat-option value="female">Christmas Convention</mat-option>
+                            <mat-option value="Sunday">Sunday</mat-option>
+                            <mat-option value="6th Month Visitation">6th Month Visitation</mat-option>
+                            <mat-option value="Easter">Easter Convention</mat-option>
+                            <mat-option value="Christmas Convention">Christmas Convention</mat-option>
                           </mat-select>
-                          <mat-error *ngIf="SermonForm.get('serviceType').invalid"> Select  gender</mat-error>
+                          <mat-error *ngIf="SermonForm.get('category').invalid"> Select  gender</mat-error>
                       </mat-form-field>
     
                       <mat-form-field appearance="outline" style="width:500px"  >

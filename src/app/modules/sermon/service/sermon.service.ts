@@ -5,14 +5,14 @@ import { environment} from '../../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class SermonServiceService {
+export class SermonService {
 
   private _baseUrl :String = environment.api_host;
   constructor(private _httpClient: HttpClient) { }
 
 
-  public addSermon(data: any){
+  addSermon(data: any){
     return this._httpClient.post(`${this._baseUrl}/sermon/`, data);
   }
-
+  
 }
