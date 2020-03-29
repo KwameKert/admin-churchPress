@@ -14,5 +14,9 @@ export class SermonService {
   addSermon(data: any){
     return this._httpClient.post(`${this._baseUrl}/sermon/`, data);
   }
+
+  listSermon(){
+    return this._httpClient.get(`${this._baseUrl}/sermon/`);
+  }
   
 }
