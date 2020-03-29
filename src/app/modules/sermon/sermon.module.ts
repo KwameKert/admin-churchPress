@@ -5,6 +5,7 @@ import { ListSermonsComponent } from './components/list-sermons/list-sermons.com
 import { UpdateSermonsComponent } from './components/update-sermons/update-sermons.component';
 import { SermonRoutingModule } from './sermon-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ViewSermonComponent } from './components/view-sermon/view-sermon.component';
 
 
 
@@ -12,12 +13,16 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [
     AddSermonComponent,
     ListSermonsComponent,
-    UpdateSermonsComponent
+    UpdateSermonsComponent,
+    ViewSermonComponent
   ],
   imports: [
     CommonModule,
     SermonRoutingModule,
     SharedModule
+  ],
+  entryComponents: [
+    ViewSermonComponent
   ]
 })
 export class SermonModule { }

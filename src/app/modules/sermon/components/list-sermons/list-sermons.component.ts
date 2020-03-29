@@ -2,6 +2,10 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import {SermonService} from '../../service/sermon.service';
 import { ToastrService } from 'ngx-toastr';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ViewSermonComponent } from '../view-sermon/view-sermon.component';
+
+
 
 @Component({
   selector: 'app-list-sermons',
@@ -15,7 +19,7 @@ export class ListSermonsComponent implements OnInit {
   responseData: any;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor(private _sermonService: SermonService, private _toastr: ToastrService) { }
+  constructor(private _sermonService: SermonService, private _toastr: ToastrService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.listSermons();
@@ -37,8 +41,16 @@ public doFilter = (value: string) => {
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 
-  // ngAfterViewInit(): void {
-  //   this.dataSource.paginator = this.paginator;
-  // }
+  openStudent(): void {
+    const dialogRef = this.dialog.open(ViewSermonComponent, {
+      width: '250px',
+      data: {name: "hello"}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
+  }
 
 }
