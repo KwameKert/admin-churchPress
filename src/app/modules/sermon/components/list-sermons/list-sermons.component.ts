@@ -6,6 +6,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { ViewSermonComponent } from '../view-sermon/view-sermon.component';
 import {DeleteItemComponent} from '../../../shared/delete-item/delete-item.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -22,14 +23,13 @@ export class ListSermonsComponent implements OnInit {
   isLoading: boolean ;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor( private _toastr: ToastrService, public dialog: MatDialog, private _crudService: CrudService, private _snackBar: MatSnackBar) { }
+  constructor( private _toastr: ToastrService, public dialog: MatDialog, private _crudService: CrudService, private _snackBar: MatSnackBar, private _router: Router) { }
 
   ngOnInit() {
   
     this.isLoading  = true;
     this.listSermons();
     
-   // this.ngxService.stopLoader('loader-03');
   }
 
   listSermons(){
@@ -94,6 +94,8 @@ public doFilter = (value: string) => {
   }
 
 
-  
+  updateSermon(id: any){
+    this._router.navigate([`sermons/update/${id}`]);
+  }
 
 }

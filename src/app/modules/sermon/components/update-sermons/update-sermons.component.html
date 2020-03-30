@@ -3,7 +3,8 @@
     <mat-card-content>
         <div class="row justify-content-center">
             <div class="col-md-5 pl-3">
-               <img src="assets/images/pst4.jpg" alt="" class="img-fluid">
+                <iframe width="300" height="215" [src]="previewUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+               
             </div>
             <div class="col-md-7">
                 <form [formGroup]="SermonForm" (ngSubmit)="saveSermon()">
@@ -34,7 +35,7 @@
     
                       <mat-form-field appearance="outline" style="width:500px"  >
                         <mat-label>Link</mat-label>
-                        <input matInput placeholder="Holy Spirit"  formControlName="url" >
+                        <input matInput placeholder="Holy Spirit"  (change)="loadVideo()" formControlName="url" >
                         <mat-error *ngIf="SermonForm.get('url').invalid"> Invalid input </mat-error>
                       </mat-form-field>  
 
