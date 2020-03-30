@@ -10,7 +10,7 @@ const routes: Routes = [
 
   {path: 'add', component: AddSermonComponent},
   {path: 'list', component: ListSermonsComponent},
-  {path: 'update:id', component: UpdateSermonsComponent},
+  {path: 'update/:id', component: UpdateSermonsComponent},
   
 ];
 

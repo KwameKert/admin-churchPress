@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import {SermonService} from '../../service/sermon.service';
+import {CrudService} from '../../../shared/service/crud.service';
 import { ToastrService } from 'ngx-toastr';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ViewSermonComponent } from '../view-sermon/view-sermon.component';
@@ -22,7 +23,7 @@ export class ListSermonsComponent implements OnInit {
   isLoading: boolean ;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor(private _sermonService: SermonService, private _toastr: ToastrService, public dialog: MatDialog, private ngxService: NgxUiLoaderService) { }
+  constructor(private _sermonService: SermonService, private _toastr: ToastrService, public dialog: MatDialog, private ngxService: NgxUiLoaderService, private _crudService: CrudService) { }
 
   ngOnInit() {
   
@@ -34,7 +35,7 @@ export class ListSermonsComponent implements OnInit {
   }
 
   listSermons(){
-    this._sermonService.listSermon().subscribe(data=>{
+    this._crudService.fetchAll("sermon").subscribe(data=>{
       this.responseData = data;
       this.dataSource = new MatTableDataSource(this.responseData.data);
       this.dataSource.paginator = this.paginator;
