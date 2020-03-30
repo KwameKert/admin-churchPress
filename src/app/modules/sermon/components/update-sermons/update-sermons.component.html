@@ -7,7 +7,7 @@
                
             </div>
             <div class="col-md-7">
-                <form [formGroup]="SermonForm" (ngSubmit)="saveSermon()">
+                <form [formGroup]="SermonForm" (ngSubmit)="updateSermon()">
     
                     <mat-form-field appearance="outline" style="width:500px"  >
                         <mat-label>Title</mat-label>
@@ -51,7 +51,7 @@
                       </div>
 
                       <div class="float-right">
-                        <button  mat-stroked-button color="primary" class="mr-5" type="submit" >Save Sermon</button>
+                        <button  mat-stroked-button color="primary" class="mr-5" type="submit" >Update Sermon</button>
                       </div>
                 </form>
             </div>

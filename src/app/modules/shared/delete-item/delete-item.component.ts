@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import {CrudService} from '../service/crud.service';
+import {CrudService} from '../../../shared/service/crud.service';
 @Component({
   selector: 'app-delete-item',
   templateUrl: './delete-item.component.html',

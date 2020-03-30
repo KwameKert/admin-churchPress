@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { environment} from '../../../../environments/environment';
+import { environment} from '../../../environments/environment';
 
 
 
@@ -36,8 +36,8 @@ export class CrudService {
   }
 
 
-  public updateItem({data, module, id}){
-    return this._httpClient.get(`${this._baseUrl}/${module}/${id}`, data);
+  public updateItem({data, module}){
+    return this._httpClient.put(`${this._baseUrl}/${module}/`, data);
   }
 
 

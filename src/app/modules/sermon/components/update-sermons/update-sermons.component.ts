@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
-import {CrudService} from '../../../shared/service/crud.service';
+import {CrudService} from '../../../../shared/service/crud.service';
 import { ToastrService } from 'ngx-toastr';
 import {Router, ActivatedRoute} from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -47,8 +47,6 @@ export class UpdateSermonsComponent implements OnInit {
         this.responseData = data;
         this.sermonUrl = this._sanitizer.bypassSecurityTrustResourceUrl(this.responseData.data.url);
         this.patchSermon(this.responseData.data);
-        console.log(this.sermonUrl)
-
     }, error=>{
       console.warn(error)
     })
@@ -72,8 +70,21 @@ export class UpdateSermonsComponent implements OnInit {
 
 
   loadVideo(){
-    console.log(this.SermonForm.value.url);
+    this.sermonUrl =  this._sanitizer.bypassSecurityTrustResourceUrl(this.SermonForm.value.url);
   }
 
+
+  updateSermon(){
+    this._crudService.updateItem({data: this.SermonForm.value, module:"sermon"})
+    .subscribe(data=>{
+      this._toastr.success("Sermon updated 🙂","",{
+        timeOut:2000
+      })
+    }, error=>{
+      this._toastr.info("Oops an error. 🥺","",{
+        timeOut:2000
+      })
+    })
+  }
 
 }

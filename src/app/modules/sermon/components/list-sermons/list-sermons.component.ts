@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
-import {CrudService} from '../../../shared/service/crud.service';
+import {CrudService} from '../../../../shared/service/crud.service';
 import { ToastrService } from 'ngx-toastr';
 import {MatDialog} from '@angular/material/dialog';
 import { ViewSermonComponent } from '../view-sermon/view-sermon.component';
