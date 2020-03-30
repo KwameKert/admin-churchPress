@@ -17,7 +17,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatCardModule, MatDividerModule, MatNativeDateModule,MatSelectModule} from '@angular/material';
 import { DeleteItemComponent } from '../modules/shared/delete-item/delete-item.component';
-
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
   declarations: [DeleteItemComponent],
@@ -43,6 +44,8 @@ import { DeleteItemComponent } from '../modules/shared/delete-item/delete-item.c
     MatTabsModule,
     MatSlideToggleModule,
     MatDialogModule,
+    NgxUiLoaderModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [  
     MatDatepickerModule,  
@@ -68,7 +71,9 @@ import { DeleteItemComponent } from '../modules/shared/delete-item/delete-item.c
     MatSelectModule,
     MatSlideToggleModule,
     MatDialogModule,
-    DeleteItemComponent
+    DeleteItemComponent,
+    NgxUiLoaderModule,
+    NgxSkeletonLoaderModule
   ],
   entryComponents: [DeleteItemComponent]
 })

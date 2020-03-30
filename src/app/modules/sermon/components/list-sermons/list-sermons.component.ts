@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ViewSermonComponent } from '../view-sermon/view-sermon.component';
 import {DeleteItemComponent} from '../../../shared/delete-item/delete-item.component';
-
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 
 @Component({
@@ -19,13 +19,18 @@ export class ListSermonsComponent implements OnInit {
   dataSource : any;
   responseData: any;
   showTable: boolean;
+  isLoading: boolean ;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor(private _sermonService: SermonService, private _toastr: ToastrService, public dialog: MatDialog) { }
+  constructor(private _sermonService: SermonService, private _toastr: ToastrService, public dialog: MatDialog, private ngxService: NgxUiLoaderService) { }
 
   ngOnInit() {
+  
+    this.isLoading  = true;
+    this.ngxService.startLoader('loader-03'); 
     this.listSermons();
-
+    
+   // this.ngxService.stopLoader('loader-03');
   }
 
   listSermons(){
@@ -34,11 +39,14 @@ export class ListSermonsComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.responseData.data);
       this.dataSource.paginator = this.paginator;
       this.showTable=true;
+      this.isLoading = false;
     }, error=>{
       this._toastr.error("Oops an error. 🥺","",{
         timeOut:2000
       })
     })
+
+   
   }
 
 public doFilter = (value: string) => {

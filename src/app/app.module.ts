@@ -13,7 +13,7 @@ import {  MatDividerModule, MatToolbarModule, MatIconModule, MatButtonModule,
   import { HttpConfigInterceptor} from './interceptor/httpconfig.interceptor';
 import { MatSidenavModule,  MatCardModule, MatTableModule, MatPaginatorModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { DatePipe } from '@angular/common';
 
 
@@ -43,6 +43,7 @@ import { DatePipe } from '@angular/common';
     MatTableModule, 
     MatPaginatorModule,
     HttpClientModule,
+    NgxUiLoaderModule,
     ToastrModule.forRoot(), 
     
   ],
