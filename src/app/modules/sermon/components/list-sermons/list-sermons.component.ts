@@ -1,9 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
-import {SermonService} from '../../service/sermon.service';
+import { MatTableDataSource, MatPaginator } from '@angular/material';
 import {CrudService} from '../../../shared/service/crud.service';
 import { ToastrService } from 'ngx-toastr';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { ViewSermonComponent } from '../view-sermon/view-sermon.component';
 import {DeleteItemComponent} from '../../../shared/delete-item/delete-item.component';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
@@ -23,7 +22,7 @@ export class ListSermonsComponent implements OnInit {
   isLoading: boolean ;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor(private _sermonService: SermonService, private _toastr: ToastrService, public dialog: MatDialog, private ngxService: NgxUiLoaderService, private _crudService: CrudService) { }
+  constructor( private _toastr: ToastrService, public dialog: MatDialog, private ngxService: NgxUiLoaderService, private _crudService: CrudService) { }
 
   ngOnInit() {
   
