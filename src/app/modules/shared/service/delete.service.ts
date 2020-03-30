@@ -5,18 +5,13 @@ import { environment} from '../../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class SermonService {
-
+export class DeleteService {
   private _baseUrl :String = environment.api_host;
   constructor(private _httpClient: HttpClient) { }
-
-
-  addSermon(data: any){
-    return this._httpClient.post(`${this._baseUrl}/sermon`, data);
-  }
-
-  listSermon(){
-    return this._httpClient.get(`${this._baseUrl}/sermon/`);
-  }
+ 
   
+  deleteItem({id, module}){
+   return this._httpClient.delete(`${this._baseUrl}/${module}/`,id);
+  }
+ 
 }

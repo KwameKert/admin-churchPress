@@ -57,10 +57,14 @@ public doFilter = (value: string) => {
 
 
   deleteSermon(id: Number){
+    let data = {
+      module: 'sermon',
+      id
+    }
     const dialogRef = this.dialog.open(DeleteItemComponent, {
-      width: '850px',
-      height: '380px',
-      data: id
+      width: '550px',
+      height: '180px',
+      data: data
     });
 
     dialogRef.afterClosed().subscribe(result => {

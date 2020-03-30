@@ -22,7 +22,7 @@ import { ViewSermonComponent } from './components/view-sermon/view-sermon.compon
     SharedModule
   ],
   entryComponents: [
-    ViewSermonComponent
+    ViewSermonComponent,
   ]
 })
 export class SermonModule { }
