@@ -3,7 +3,7 @@ import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {CrudService} from '../../../shared/service/crud.service';
 import { ToastrService } from 'ngx-toastr';
 import {Router, ActivatedRoute} from '@angular/router';
-
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -13,17 +13,20 @@ import {Router, ActivatedRoute} from '@angular/router';
 })
 export class UpdateSermonsComponent implements OnInit {
 
-  previewUrl : any = 'assets/images/pst4.jpg';
+  sermonUrl : any ;
   responseData: any;
   sermonId: any;
   SermonForm: any;
-  constructor(private _fb: FormBuilder, private _crudService: CrudService, private _toastr: ToastrService, private route: ActivatedRoute, private  _router: Router) { }
+  constructor(private _fb: FormBuilder, private _crudService: CrudService, private _toastr: ToastrService, private route: ActivatedRoute, private  _router: Router, private _sanitizer: DomSanitizer) { }
 
 
   ngOnInit() {
+    console.log(this.sermonUrl)
     this.sermonId = this.route.snapshot.paramMap.get('id');
     this.loadForm();
     this.getSermon(this.sermonId);
+    console.log(this.sermonUrl)
+
   }
 
   loadForm(){
@@ -42,7 +45,9 @@ export class UpdateSermonsComponent implements OnInit {
 
     this._crudService.fetchItem({id, module:"sermon"}).subscribe(data=>{
         this.responseData = data;
+        this.sermonUrl = this._sanitizer.bypassSecurityTrustResourceUrl(this.responseData.data.url);
         this.patchSermon(this.responseData.data);
+        console.log(this.sermonUrl)
 
     }, error=>{
       console.warn(error)
