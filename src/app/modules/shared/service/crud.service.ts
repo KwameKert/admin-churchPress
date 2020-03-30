@@ -31,8 +31,8 @@ export class CrudService {
 
 
 
-  public addItem({data, module}){
-    return this._httpClient.get(`${this._baseUrl}/${module}/`, data);
+  public addItem(data, module){
+    return this._httpClient.post(`${this._baseUrl}/${module}/`, data);
   }
 
 

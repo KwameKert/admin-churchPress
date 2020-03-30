@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import {MatDialog} from '@angular/material/dialog';
 import { ViewSermonComponent } from '../view-sermon/view-sermon.component';
 import {DeleteItemComponent} from '../../../shared/delete-item/delete-item.component';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -22,12 +22,11 @@ export class ListSermonsComponent implements OnInit {
   isLoading: boolean ;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor( private _toastr: ToastrService, public dialog: MatDialog, private ngxService: NgxUiLoaderService, private _crudService: CrudService) { }
+  constructor( private _toastr: ToastrService, public dialog: MatDialog, private _crudService: CrudService, private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
   
     this.isLoading  = true;
-    this.ngxService.startLoader('loader-03'); 
     this.listSermons();
     
    // this.ngxService.stopLoader('loader-03');
@@ -79,8 +78,18 @@ public doFilter = (value: string) => {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-      // this.animal = result;
+      if(result.event){
+        this._snackBar.open("Sermon Deleted 🙂  ", "", {
+          duration: 2000,
+        });
+        this.listSermons();
+
+      }else{
+
+        this._toastr.error("Oops an error. 🥺","",{
+          timeOut:2000
+        })
+      }
     });
   }
 

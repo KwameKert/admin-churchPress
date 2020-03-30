@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import {DeleteService} from '../service/delete.service';
+import {CrudService} from '../service/crud.service';
 @Component({
   selector: 'app-delete-item',
   templateUrl: './delete-item.component.html',
@@ -10,7 +10,7 @@ export class DeleteItemComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<DeleteItemComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private _deleteService: DeleteService) { }
+    @Inject(MAT_DIALOG_DATA) public data: any, private _crudService: CrudService) { }
 
   ngOnInit() {
   
@@ -23,7 +23,7 @@ export class DeleteItemComponent implements OnInit {
 
 
   delete(){
-    this._deleteService.deleteItem(this.data).subscribe(data=>{
+    this._crudService.deleteItem(this.data).subscribe(data=>{
       this.dialogRef.close({event:true});
     }, error=>{
       console.warn(error);
