@@ -18,12 +18,14 @@ export class ListSermonsComponent implements OnInit {
   displayedColumns: string[] = ['id', 'title', 'speaker','category', 'uploaded', 'action'];
   dataSource : any;
   responseData: any;
+  showTable: boolean;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(private _sermonService: SermonService, private _toastr: ToastrService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.listSermons();
+
   }
 
   listSermons(){
@@ -31,6 +33,7 @@ export class ListSermonsComponent implements OnInit {
       this.responseData = data;
       this.dataSource = new MatTableDataSource(this.responseData.data);
       this.dataSource.paginator = this.paginator;
+      this.showTable=true;
     }, error=>{
       this._toastr.error("Oops an error. 🥺","",{
         timeOut:2000
@@ -68,7 +71,7 @@ public doFilter = (value: string) => {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log(result);
       // this.animal = result;
     });
   }

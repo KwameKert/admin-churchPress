@@ -10,8 +10,12 @@ export class DeleteService {
   constructor(private _httpClient: HttpClient) { }
  
   
+  
   deleteItem({id, module}){
-   return this._httpClient.delete(`${this._baseUrl}/${module}/`,id);
+   return this._httpClient.delete(`${this._baseUrl}/${module}/${id}`);
   }
+
+
+
  
 }

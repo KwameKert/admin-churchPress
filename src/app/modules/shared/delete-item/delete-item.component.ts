@@ -29,6 +29,6 @@ export class DeleteItemComponent implements OnInit {
       console.warn(error);
       this.dialogRef.close({event:false});
     })
-    console.log("Item deleted")
+
   }
 }
