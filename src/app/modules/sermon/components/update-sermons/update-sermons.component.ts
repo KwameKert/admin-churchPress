@@ -4,6 +4,7 @@ import {CrudService} from '../../../../shared/service/crud.service';
 import { ToastrService } from 'ngx-toastr';
 import {Router, ActivatedRoute} from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 
 @Component({
@@ -17,11 +18,10 @@ export class UpdateSermonsComponent implements OnInit {
   responseData: any;
   sermonId: any;
   SermonForm: any;
-  constructor(private _fb: FormBuilder, private _crudService: CrudService, private _toastr: ToastrService, private route: ActivatedRoute, private  _router: Router, private _sanitizer: DomSanitizer) { }
+  constructor(private _fb: FormBuilder, private _crudService: CrudService, private _toastr: ToastrService, private route: ActivatedRoute, private ngxService: NgxUiLoaderService,  private _sanitizer: DomSanitizer) { }
 
 
   ngOnInit() {
-    console.log(this.sermonUrl)
     this.sermonId = this.route.snapshot.paramMap.get('id');
     this.loadForm();
     this.getSermon(this.sermonId);
@@ -63,7 +63,7 @@ export class UpdateSermonsComponent implements OnInit {
       speaker: sermon.speaker,
       url: sermon.url,
       category: sermon.category,
-      stat : sermon.stat
+      stat : sermon.stat == 'true'? true : false
     })
 
   }
@@ -75,6 +75,8 @@ export class UpdateSermonsComponent implements OnInit {
 
 
   updateSermon(){
+
+    this.ngxService.startLoader('loader-02');
     this._crudService.updateItem({data: this.SermonForm.value, module:"sermon"})
     .subscribe(data=>{
       this._toastr.success("Sermon updated 🙂","",{
@@ -85,6 +87,10 @@ export class UpdateSermonsComponent implements OnInit {
         timeOut:2000
       })
     })
+
+    this.ngxService.stopLoader('loader-02');
   }
 
+
+ 
 }
