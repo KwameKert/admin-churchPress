@@ -22,6 +22,12 @@ const routes: Routes= [
   component: DefaultComponent,
   loadChildren: () => import('./modules/sermon/sermon.module')
                      .then(m => m.SermonModule)
+},
+{
+  path:'departments', 
+  component: DefaultComponent,
+  loadChildren: () => import('./modules/department/department.module')
+                     .then(m => m.DepartmentModule)
 }
 ];
 
