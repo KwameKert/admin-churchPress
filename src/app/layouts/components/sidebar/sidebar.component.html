@@ -11,10 +11,16 @@
     <div class="text-center">
         <a  mat-list-item  routerLinkActive="list-item-active"   active   routerLink="/student/dashboard">  <mat-icon class="sidebar-icon">home</mat-icon  > Dashboard</a>
 
-            <a  mat-list-item  routerLinkActive="list-item-active" (click)="showSermonLinks()" data-toggle="collapse" href="#sermonLinks">	<mat-icon  class="sidebar-icon">subscriptions</mat-icon>Sermon <mat-icon class="li-icon" [style.display]="sermonLinks ? 'none':'block'"  >keyboard_arrow_right</mat-icon>  <mat-icon class="li-icon" [style.display]="sermonLinks ? 'block':'none'" >keyboard_arrow_down</mat-icon></a>
+        <a  mat-list-item  routerLinkActive="list-item-active" (click)="showSermonLinks()" data-toggle="collapse" href="#sermonLinks">	<mat-icon  class="sidebar-icon">subscriptions</mat-icon>Sermon <mat-icon class="li-icon" [style.display]="sermonLinks ? 'none':'block'"  >keyboard_arrow_right</mat-icon>  <mat-icon class="li-icon" [style.display]="sermonLinks ? 'block':'none'" >keyboard_arrow_down</mat-icon></a>
             <div class="collapse" id="sermonLinks">
                 <li><a  mat-list-item  routerLinkActive="list-item-active" routerLink="/sermons/add"> <mat-icon>add</mat-icon>  Add Sermon</a></li>
                 <li><a  mat-list-item  routerLinkActive="list-item-active" routerLink="/sermons/list"> <mat-icon>add</mat-icon>  List Sermons</a></li>
+              </div>
+
+        <a  mat-list-item  routerLinkActive="list-item-active" (click)="showDepartmentLinks()" data-toggle="collapse" href="#departmentLinks"> <mat-icon class="sidebar-icon"> business</mat-icon> Departments <mat-icon class="li-icon" [style.display]="departmentLinks ? 'none':'block'"  >keyboard_arrow_right</mat-icon>  <mat-icon class="li-icon" [style.display]="departmentLinks ? 'block':'none'" >keyboard_arrow_down</mat-icon></a>
+            <div class="collapse" id="departmentLinks">
+                <li><a  mat-list-item  routerLinkActive="list-item-active" routerLink="/departments/add"> <mat-icon>add</mat-icon>  Add Deparment</a></li>
+                <li><a  mat-list-item  routerLinkActive="list-item-active" routerLink="/departments/list"> <mat-icon>add</mat-icon>  List Departments</a></li>
               </div>
                
         <a  mat-list-item  routerLinkActive="list-item-active" routerLink="/" class="text-center"> Dashboard</a>
