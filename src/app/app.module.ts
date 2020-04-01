@@ -15,6 +15,10 @@ import { MatSidenavModule,  MatCardModule, MatTableModule, MatPaginatorModule} f
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { DatePipe } from '@angular/common';
+import { AddDepartmentComponent } from './modules/department/components/add-department/add-department.component';
+import { ListDepartmentComponent } from './modules/department/components/list-department/list-department.component';
+import { UpdateDepartmentComponent } from './modules/department/components/update-department/update-department.component';
+import { ViewDepartmentComponent } from './modules/department/components/view-department/view-department.component';
 
 
 @NgModule({
@@ -25,6 +29,7 @@ import { DatePipe } from '@angular/common';
     SidebarComponent,
     FooterComponent,
     DefaultComponent,
+   
     
   ],
   imports: [
