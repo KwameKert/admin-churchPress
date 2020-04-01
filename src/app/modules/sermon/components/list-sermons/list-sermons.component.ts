@@ -40,12 +40,8 @@ export class ListSermonsComponent implements OnInit {
         this.dataSource = new MatTableDataSource(this.responseData.data);
         this.dataSource.paginator = this.paginator;
         this.showTable=true;
-      }else{
-
-        console.log("Data is empty")
       }
-   
-      console.log(this.responseData)
+      
     }, error=>{
       this._toastr.error("Oops an error. 🥺","",{
         timeOut:2000
