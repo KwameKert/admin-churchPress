@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import {FormBuilder, Validators, FormControl} from '@angular/forms';
+import { CrudService } from 'src/app/shared/service/crud.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-department',
@@ -9,15 +12,22 @@ export class AddDepartmentComponent implements OnInit {
   name = 'ng2-ckeditor';
   ckeConfig: any;
   mycontent: string;
-  log: string = '';
-  @ViewChild("myckeditor", {static: true}) ckeditor: any;
+  departmentForm : any;
+  responseData: any;
 
  
-  constructor() {
-    this.mycontent = `<p>My html content</p>`;
+  constructor(private _fb: FormBuilder, private _crudService: CrudService, private _toastr: ToastrService) {
+    this.mycontent = `<p>Description Here</p>`;
   }
 
   ngOnInit() {
+    this.loadForm();
+    this.loadConfig();
+   
+  }
+
+
+  loadConfig(){
     this.ckeConfig = {
       allowedContent: false,
       forcePasteAsPlainText: true,
@@ -32,19 +42,38 @@ export class AddDepartmentComponent implements OnInit {
         { name: 'tools' },
         { name: 'others' }
     ],
-    height : '150px'
+    height : '150px',
     
     };
   }
 
-  onChange($event: any): void {
-    console.log("onChange");
-    //this.log += new Date() + "<br />";
+
+  loadForm(){
+    this.departmentForm = this._fb.group({
+      name: new FormControl('', [Validators.required]),
+      description: new FormControl('Description here',Validators.required),
+      stat: ''
+    })
   }
 
-  onPaste($event: any): void {
-    console.log("onPaste");
-    //this.log += new Date() + "<br />";
+  saveDepartment(){
+    
+    this._crudService.addItem(this.departmentForm.value, "department")
+                      .subscribe(data => {
+                        this.responseData = data;
+                        if(this.responseData.status ==200){
+                          this._toastr.success("Department saved 🙂","",{
+                            timeOut:2000
+                          })
+
+                          this.departmentForm.reset();
+                        }
+
+                      }, error => {
+                        this._toastr.info("Oops an error. 🥺","",{
+                          timeOut:2000
+                        })
+                      })
   }
 
 }
