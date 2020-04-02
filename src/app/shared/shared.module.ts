@@ -20,9 +20,10 @@ import { DeleteItemComponent } from '../modules/shared/delete-item/delete-item.c
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { ExcerptFilter } from './excerpts.pipe';
 
 @NgModule({
-  declarations: [DeleteItemComponent],
+  declarations: [DeleteItemComponent, ExcerptFilter],
   imports: [
     CommonModule,
     MatTableModule,
@@ -47,7 +48,8 @@ import { CKEditorModule } from 'ng2-ckeditor';
     MatDialogModule,
     NgxUiLoaderModule,
     NgxSkeletonLoaderModule,
-    CKEditorModule
+    CKEditorModule,
+    
   ],
   providers: [  
     MatDatepickerModule,  
@@ -76,7 +78,8 @@ import { CKEditorModule } from 'ng2-ckeditor';
     DeleteItemComponent,
     NgxUiLoaderModule,
     NgxSkeletonLoaderModule,
-    CKEditorModule
+    CKEditorModule,
+    ExcerptFilter
   ],
   entryComponents: [DeleteItemComponent]
 })

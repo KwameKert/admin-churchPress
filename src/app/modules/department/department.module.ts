@@ -18,6 +18,6 @@ import { DepartmentRoutingModule } from './department-routing.module';
     CommonModule,
     SharedModule,
     DepartmentRoutingModule
-  ]
+  ],
 })
 export class DepartmentModule { }

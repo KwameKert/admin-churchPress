@@ -6,8 +6,6 @@
                <img src="assets/images/dep2.jpg" alt="" class="img-fluid">
             </div>
             <div class="col-md-7">
-
-
                     <form [formGroup]="departmentForm" (ngSubmit)="saveDepartment()">
                     <mat-form-field appearance="outline" style="width:590px"  >
                         <mat-label>Name</mat-label>
@@ -15,8 +13,6 @@
                         <mat-error *ngIf="departmentForm.get('name').invalid"> Invalid input </mat-error>
                       </mat-form-field>
 
-                      
-                      
                       <ckeditor matInput formControlName="description" [config]="ckeConfig" debounce="500">
                     </ckeditor>
                     <mat-error *ngIf="departmentForm.get('description').invalid"> Invalid input </mat-error>

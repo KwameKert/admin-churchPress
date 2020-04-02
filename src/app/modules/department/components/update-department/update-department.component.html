@@ -1,1 +1,35 @@
-<p>update-department works!</p>
+
+<mat-card class="mat-elevation-z3" style="margin-bottom:300px; text-align: center">
+    <mat-card-content>
+        <div class="row justify-content-center">
+            <div class="col-md-5 pl-3">
+               <img src="assets/images/dep2.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-7">
+                    <form [formGroup]="departmentForm" (ngSubmit)="saveDepartment()">
+                    <mat-form-field appearance="outline" style="width:590px"  >
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Men Ministry"  formControlName="name" >
+                        <mat-error *ngIf="departmentForm.get('name').invalid"> Invalid input </mat-error>
+                      </mat-form-field>
+
+                      <ckeditor matInput formControlName="description" [config]="ckeConfig" debounce="500">
+                    </ckeditor>
+                    <mat-error *ngIf="departmentForm.get('description').invalid"> Invalid input </mat-error>
+
+                      <div class="form-group  " >
+                        <mat-slide-toggle formControlName="stat" style="margin: 10px 0px  0px -500px;">Active</mat-slide-toggle>
+                      </div>
+
+                      <div class="float-right">
+                        <button  mat-stroked-button color="primary" class="mr-1" type="submit" >Save Department</button>
+                      </div>
+                </form> 
+            </div>
+        </div>
+    
+    </mat-card-content>
+    
+
+
+</mat-card>

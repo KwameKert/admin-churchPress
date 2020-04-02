@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators, FormControl} from '@angular/forms';
 import { CrudService } from 'src/app/shared/service/crud.service';
 import { ToastrService } from 'ngx-toastr';
@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./add-department.component.scss']
 })
 export class AddDepartmentComponent implements OnInit {
-  name = 'ng2-ckeditor';
+
   ckeConfig: any;
   mycontent: string;
   departmentForm : any;
