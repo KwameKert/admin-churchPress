@@ -25,12 +25,12 @@ export class DashboardComponent implements OnInit {
      // this.status  = true;
     }
     else {
-      console.log("not found")
+    //  console.log("not found")
       // this.status = false;
     }
 })
 
-console.log(this.found)
+//console.log(this.found)
 
   }
 

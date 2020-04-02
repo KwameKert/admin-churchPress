@@ -1,1 +1,69 @@
-<p>add-department works!</p>
+
+<mat-card class="mat-elevation-z3" style="margin-bottom:300px; text-align: center">
+    <mat-card-content>
+        <div class="row justify-content-center">
+            <div class="col-md-5 pl-3">
+               <img src="assets/images/pst4.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-7">
+                <ckeditor [(ngModel)]="mycontent" [config]="ckeConfig" debounce="500">
+                    <p>Hello <strong>world</strong></p>
+                  </ckeditor>
+                  <div [innerHTML]="content"></div>
+
+
+                <!-- <form [formGroup]="SermonForm" (ngSubmit)="saveSermon()">
+    
+                    <mat-form-field appearance="outline" style="width:500px"  >
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Holy Spirit"  formControlName="title" >
+                        <mat-error *ngIf="SermonForm.get('title').invalid"> Invalid input </mat-error>
+                      </mat-form-field>
+    
+                      
+                    <mat-form-field appearance="outline" style="width:500px"  >
+                        <mat-label>Speaker</mat-label>
+                        <input matInput placeholder="Holy Spirit"  formControlName="speaker" >
+                        <mat-error *ngIf="SermonForm.get('speaker').invalid"> Invalid input </mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline" style="width:500px" >
+                        <mat-label>Service </mat-label>
+                        <mat-select formControlName="category">
+                            <mat-option value="Sunday">Sunday</mat-option>
+                            <mat-option value="6th Month Visitation">6th Month Visitation</mat-option>
+                            <mat-option value="Easter">Easter Convention</mat-option>
+                            <mat-option value="Christmas Convention">Christmas Convention</mat-option>
+                          </mat-select>
+                          <mat-error *ngIf="SermonForm.get('category').invalid"> Select  gender</mat-error>
+                      </mat-form-field>
+    
+                      <mat-form-field appearance="outline" style="width:500px"  >
+                        <mat-label>Link</mat-label>
+                        <input matInput placeholder="Holy Spirit"  formControlName="url" >
+                        <mat-error *ngIf="SermonForm.get('url').invalid"> Invalid input </mat-error>
+                      </mat-form-field>  
+
+                      
+                    <mat-form-field appearance="outline" style="width:500px"  >
+                        <mat-label>Description</mat-label>
+                        <textarea id="" cols="10" rows="3" matInput placeholder="Holy Spirit"  formControlName="description"></textarea>
+                        <mat-error *ngIf="SermonForm.get('description').invalid"> Invalid input </mat-error>
+                      </mat-form-field>
+
+                      <div class="form-group " >
+                        <mat-slide-toggle formControlName="stat" style="margin-left: -430px;">Live</mat-slide-toggle>
+                      </div>
+
+                      <div class="float-right">
+                        <button  mat-stroked-button color="primary" class="mr-5" type="submit" >Save Sermon</button>
+                      </div>
+                </form> -->
+            </div>
+        </div>
+    
+    </mat-card-content>
+    
+
+
+</mat-card>

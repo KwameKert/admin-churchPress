@@ -19,6 +19,7 @@ import { MatCardModule, MatDividerModule, MatNativeDateModule,MatSelectModule} f
 import { DeleteItemComponent } from '../modules/shared/delete-item/delete-item.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 @NgModule({
   declarations: [DeleteItemComponent],
@@ -45,7 +46,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     MatSlideToggleModule,
     MatDialogModule,
     NgxUiLoaderModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    CKEditorModule
   ],
   providers: [  
     MatDatepickerModule,  
@@ -73,7 +75,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     MatDialogModule,
     DeleteItemComponent,
     NgxUiLoaderModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    CKEditorModule
   ],
   entryComponents: [DeleteItemComponent]
 })

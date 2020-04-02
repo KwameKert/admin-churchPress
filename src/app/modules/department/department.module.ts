@@ -5,7 +5,7 @@ import { AddDepartmentComponent } from './components/add-department/add-departme
 import { UpdateDepartmentComponent } from './components/update-department/update-department.component';
 import { ListDepartmentComponent } from './components/list-department/list-department.component';
 import { ViewDepartmentComponent } from './components/view-department/view-department.component';
-
+import { DepartmentRoutingModule } from './department-routing.module';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { ViewDepartmentComponent } from './components/view-department/view-depar
     ViewDepartmentComponent,],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    DepartmentRoutingModule
   ]
 })
 export class DepartmentModule { }
