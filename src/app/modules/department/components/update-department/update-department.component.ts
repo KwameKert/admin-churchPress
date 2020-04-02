@@ -78,6 +78,10 @@ export class UpdateDepartmentComponent implements OnInit {
   }
 
 
+  saveDepartment(){
+    
+  }
+
 
   patchDepartmentForm(department){
     this.departmentForm.patchValue({

@@ -93,7 +93,7 @@ public doFilter = (value: string) => {
   }
 
 
-  updateSermon(id: any){
+  updateDepartment(id: any){
     this._router.navigate([`departments/update/${id}`]);
   }
 
